@@ -42,3 +42,29 @@ PUSH TO GCR
 3) docker build -t <image_name>:latest .
 4) docker tag [SOURCE_IMAGE] gcr.io/[PROJECT-ID]/[IMAGE]
 5) docker push gcr.io/[PROJECT-ID]/[IMAGE]
+
+docker run -it --rm -e <MY_ENV_VAR=my_value> -v <HOST PATH>:<PATH IN CONTAINER> <IMAGE NAME>
+
+-it is interactive terminal (for the container)
+--rm removes the container after it closes
+
+--------------------------------------------------------------------------------------------------
+
+DOCKER GAME - Containerization(WINDOWS):
+
+1. Use python 3.9 Image with no dependancies on your docker file; Copy a Graphical game of your choice from Theos link into your app.py
+>>(BUILD-THE-DOCKER-FILE)
+docker build -t <LIZZO-GOES-HERE> .
+
+2. Install VcXsrv Windows X Server (Xserver)
+
+3. XLaunch in windows search -- Change Display Number to 0 Change nothing else.
+
+4. RUN-IT
+winpty docker run -it --rm -e DISPLAY=host.docker.internal:0.0 -v /tmp/.X11-unix:/tmp/.X11-unix <CHANGE-LIZZO-HERE>
+
+5. SHUT-IT - Power off docker first using the power button on docker
+>> <INPUT BELOW COMMAND IN YOUR TERMINAL>
+wsl --shutdown 
+
+6. Close Xlaunch on the system Tray.
